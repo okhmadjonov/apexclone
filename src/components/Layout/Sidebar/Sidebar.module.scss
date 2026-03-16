@@ -1,0 +1,80 @@
+.sidebar {
+  width: 260px;
+  background: #020806;
+  display: flex;
+  flex-direction: column;
+  font-size: clamp(12px, 0.8vw, 14px);
+  color: #3c3c3c;
+  // border: 1px solid #3c3c3c;
+
+  .logo {
+    height: 8vh;
+    display: flex;
+    align-items: center;
+    padding: 0 16px;
+    border-bottom: 0.5px solid #1d1d1d;
+
+    .headerIcon {
+      width: 35px;
+      height: 35px;
+      background: #009048;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 12px;
+      margin-right: 12px;
+      color: #020806;
+      font-size: clamp(18px, 1.5vw, 24px);
+      svg {
+        background: none;
+        color: #020806;
+      }
+    }
+
+    .headerText {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+
+      .headerApex {
+        font-size: clamp(10px, 1vw, 14px);
+        font-weight: 600;
+        color: #d6d6d6;
+        line-height: 0.8;
+      }
+
+      .headerDash {
+        font-size: clamp(8px, 0.9vw, 10px);
+        font-weight: 600;
+        color: #3c3c3c;
+        margin-top: 8px;
+        line-height: 0.5;
+        letter-spacing: 1px;
+      }
+    }
+  }
+
+  .menu {
+    list-style: none;
+
+    li {
+      padding: 12px 18px;
+      cursor: pointer;
+      border-bottom: 1px solid #000201;
+      font-size: clamp(12px, 0.8vw, 14px);
+      color: #3c3c3c;
+      font-weight: 700;
+      transition: color 0.2s ease;
+    }
+
+    li:hover {
+      color: #efefef;
+      background: none;
+    }
+
+    .active {
+      background: #009048;
+      color: #ffffff;
+    }
+  }
+}
