@@ -6,7 +6,6 @@ import {
   IoChevronForward,
 } from "react-icons/io5";
 import styles from "./Sidebar.module.scss";
-import { IoFlash } from "react-icons/io5";
 
 import { menuItems, MenuItem, SubMenuItem } from "../../../constants/menu";
 
@@ -44,7 +43,7 @@ const Sidebar = () => {
     <div className={styles.sidebar}>
       <div className={styles.logo}>
         <div className={styles.headerIcon}>
-          <IoFlash />
+          <IoFlashOutline />
         </div>
         <div className={styles.headerText}>
           <div className={styles.headerApex}>Apex</div>
