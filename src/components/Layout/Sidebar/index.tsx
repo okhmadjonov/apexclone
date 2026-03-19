@@ -60,9 +60,9 @@ const Sidebar = () => {
                 className={styles.menuItem}
                 onClick={() => toggleMenu(item.name)}
               >
-                <span className={styles.leftIcon}>
+                {/* <span className={styles.leftIcon}>
                   <Icon />
-                </span>
+                </span> */}
                 {item.name}
                 <span className={styles.chevron}>
                   {openMenus.includes(item.name) ? (
