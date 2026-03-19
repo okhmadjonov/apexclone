@@ -5,25 +5,197 @@
   align-items: center;
   justify-content: space-between;
   border-bottom: 0.5px solid #1d1d1d;
-  .user {
-    background: #009048;
-    color: white;
-    padding: 6px 12px;
-    border-radius: 20px;
+  padding: 0 24px;
+
+  .leftSection {
+    display: flex;
+    align-items: center;
+    flex: 1;
+    max-width: 400px;
   }
 
-  .menu {
+  .searchWrapper {
+    position: relative;
+    width: 100%;
+  }
+
+  .searchIcon {
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #6b757b;
+    font-size: 16px;
     display: flex;
-    gap: 10px;
-    a {
+    align-items: center;
+  }
+
+  .searchInput {
+    width: 100%;
+    background: #0a0f0d;
+    border: 1px solid #1d1d1d;
+    border-radius: 8px;
+    padding: 10px 16px 10px 40px;
+    color: #efefef;
+    font-size: 14px;
+    outline: none;
+    transition: all 0.2s ease;
+
+    &::placeholder {
+      color: #6b757b;
+      font-weight: 400;
+    }
+
+    &:focus {
+      border-color: #009048;
+      background: #020806;
+    }
+  }
+
+  .rightSection {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .newOrderBtn {
+    background: #009048;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 8px 16px;
+    font-size: 14px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    transition: background 0.2s ease;
+
+    &:hover {
+      background: #00b058;
+    }
+
+    svg {
+      background: none;
+      font-weight: 500;
+      font-size: clamp(1.3rem, 1vw, 1.5rem);
+    }
+  }
+
+  .themeToggle {
+    border-radius: 8px;
+    padding: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: #6b757b;
+    transition: all 0.2s ease;
+
+    &:hover {
+      background: #062819;
+    }
+
+    svg {
+      background: none;
+    }
+  }
+
+  .notificationWrapper {
+    position: relative;
+    cursor: pointer;
+  }
+
+  .notificationIcon {
+    border-radius: 8px;
+    padding: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #6b757b;
+    transition: all 0.2s ease;
+
+    &:hover {
+      background: #062819;
+    }
+
+    svg {
+      background: none;
+    }
+  }
+
+  .notificationDot {
+    position: absolute;
+    top: 4px;
+    right: 4px;
+    width: 8px;
+    height: 8px;
+    background: #ff4d4f;
+    border-radius: 50%;
+    border: 2px solid #020806;
+  }
+
+  .userWrapper {
+    position: relative;
+    cursor: pointer;
+  }
+
+  .userAvatar {
+    width: 36px;
+    height: 36px;
+    background: #02160d;
+    color: #009048;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    font-size: 16px;
+    text-transform: uppercase;
+    transition: background 0.2s ease;
+
+    &:hover {
+      background: #062819;
+    }
+  }
+
+  .userDropdown {
+    position: absolute;
+    top: 45px;
+    right: 0;
+    background: #0a0f0d;
+    border: 1px solid #1d1d1d;
+    border-radius: 8px;
+    min-width: 150px;
+    display: none;
+    flex-direction: column;
+    z-index: 100;
+
+    &.show {
+      display: flex;
+    }
+
+    a,
+    button {
+      padding: 10px 16px;
+      color: #efefef;
       text-decoration: none;
+      font-size: 14px;
+      background: transparent;
+      border: none;
+      text-align: left;
+      cursor: pointer;
+      transition: background 0.2s ease;
+
+      &:hover {
+        background: #1a1f1d;
+      }
     }
 
     button {
-      border: none;
-      background: #009048;
-      padding: 6px 12px;
-      cursor: pointer;
+      width: 100%;
+      border-top: 1px solid #1d1d1d;
     }
   }
 }
