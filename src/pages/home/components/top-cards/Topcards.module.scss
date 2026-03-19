@@ -24,16 +24,15 @@
     width: 100%;
 
     .card {
-      border: 1px solid #1d1d1d;
+      border: 0.5px solid #1d1d1d;
       border-radius: 16px;
       padding: 20px;
       position: relative;
       transition: all 0.2s ease;
+      cursor: pointer;
 
       &:hover {
-        border-color: #009048;
-        transform: translateY(-2px);
-        box-shadow: 0 8px 24px rgba(0, 144, 72, 0.15);
+        border: 0.5px solid #009048;
       }
 
       .cardHeader {

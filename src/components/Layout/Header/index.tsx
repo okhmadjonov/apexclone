@@ -11,7 +11,6 @@ import {
   IoNotificationsOutline,
 } from "react-icons/io5";
 
-
 const Header = () => {
   const [showDropdown, setShowDropdown] = useState(false);
   const [isDarkMode, setIsDarkMode] = useState(true);
@@ -29,8 +28,8 @@ const Header = () => {
     setShowDropdown(!showDropdown);
   };
 
-  const userName = "Admin";
-  const userInitial = userName.charAt(0);
+  const userName = "AS";
+  const userInitial = userName.substring(0, 2);
 
   return (
     <div className={styles.header}>
@@ -56,7 +55,7 @@ const Header = () => {
         </button>
 
         <div className={styles.themeToggle} onClick={toggleTheme}>
-          {isDarkMode ? <IoSunnyOutline /> : <IoMoonOutline />}
+          {isDarkMode ? <IoMoonOutline /> : <IoSunnyOutline />}
         </div>
 
         <div className={styles.notificationWrapper}>
