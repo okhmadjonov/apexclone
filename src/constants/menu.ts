@@ -1,4 +1,3 @@
-
 import {
   IoFlashOutline,
   IoHomeOutline,
@@ -18,12 +17,14 @@ import { IconType } from "react-icons";
 
 export interface SubMenuItem {
   name: string;
+  nameKey: string;
   icon: IconType;
   path: string;
 }
 
 export interface MenuItem {
   name: string;
+  nameKey: string;
   icon: IconType;
   children: SubMenuItem[];
 }
@@ -31,51 +32,56 @@ export interface MenuItem {
 export const menuItems: MenuItem[] = [
   {
     name: "Overview",
+    nameKey: "menu.overview",
     icon: IoHomeOutline,
     children: [
-      { name: "Dashboard", icon: IoBarChartOutline, path: "/dashboard" },
-      { name: "Analytics", icon: IoBarChartOutline, path: "/analytics" },
-      { name: "eCommerce", icon: IoCartOutline, path: "/ecommerce" },
-      { name: "CRM", icon: IoPeopleOutline, path: "/crm" },
-      { name: "SaaS", icon: IoFlashOutline, path: "/saas" },
-      { name: "Charts", icon: IoBarChartOutline, path: "/charts" },
+      { name: "Dashboard", nameKey: "menu.dashboard", icon: IoBarChartOutline, path: "/dashboard" },
+      { name: "Analytics", nameKey: "menu.analytics", icon: IoBarChartOutline, path: "/analytics" },
+      { name: "eCommerce", nameKey: "menu.ecommerce", icon: IoCartOutline, path: "/ecommerce" },
+      { name: "CRM", nameKey: "menu.crm", icon: IoPeopleOutline, path: "/crm" },
+      { name: "SaaS", nameKey: "menu.saas", icon: IoFlashOutline, path: "/saas" },
+      { name: "Charts", nameKey: "menu.charts", icon: IoBarChartOutline, path: "/charts" },
     ],
   },
   {
     name: "Commerce",
+    nameKey: "menu.commerce",
     icon: IoCartOutline,
     children: [
-      { name: "Orders", icon: IoDocumentTextOutline, path: "/orders" },
-      { name: "Products", icon: IoFlashOutline, path: "/products" },
-      { name: "Customers", icon: IoPeopleOutline, path: "/customers" },
+      { name: "Orders", nameKey: "menu.orders", icon: IoDocumentTextOutline, path: "/orders" },
+      { name: "Products", nameKey: "menu.products", icon: IoFlashOutline, path: "/products" },
+      { name: "Customers", nameKey: "menu.customers", icon: IoPeopleOutline, path: "/customers" },
     ],
   },
   {
     name: "Apps",
+    nameKey: "menu.apps",
     icon: IoAppsOutline,
     children: [
-      { name: "Chat", icon: IoMailOutline, path: "/chat" },
-      { name: "Calendar", icon: IoCalendarOutline, path: "/calendar" },
-      { name: "Mail", icon: IoMailOutline, path: "/mail" },
+      { name: "Chat", nameKey: "menu.chat", icon: IoMailOutline, path: "/chat" },
+      { name: "Calendar", nameKey: "menu.calendar", icon: IoCalendarOutline, path: "/calendar" },
+      { name: "Mail", nameKey: "menu.mail", icon: IoMailOutline, path: "/mail" },
     ],
   },
   {
     name: "Finance",
+    nameKey: "menu.finance",
     icon: IoWalletOutline,
     children: [
-      { name: "Billing", icon: IoDocumentTextOutline, path: "/billing" },
-      { name: "Invoices", icon: IoDocumentTextOutline, path: "/invoices" },
-      { name: "Reports", icon: IoBarChartOutline, path: "/reports" },
+      { name: "Billing", nameKey: "menu.billing", icon: IoDocumentTextOutline, path: "/billing" },
+      { name: "Invoices", nameKey: "menu.invoices", icon: IoDocumentTextOutline, path: "/invoices" },
+      { name: "Reports", nameKey: "menu.reports", icon: IoBarChartOutline, path: "/reports" },
     ],
   },
   {
     name: "System",
+    nameKey: "menu.system",
     icon: IoSettingsOutline,
     children: [
-      { name: "Users", icon: IoPeopleOutline, path: "/users" },
-      { name: "Notifications", icon: IoNotificationsOutline, path: "/notifications" },
-      { name: "Settings", icon: IoSettingsOutline, path: "/settings" },
-      { name: "Help & Support", icon: IoHelpBuoyOutline, path: "/help" },
+      { name: "Users", nameKey: "menu.users", icon: IoPeopleOutline, path: "/users" },
+      { name: "Notifications", nameKey: "menu.notifications", icon: IoNotificationsOutline, path: "/notifications" },
+      { name: "Settings", nameKey: "menu.settings", icon: IoSettingsOutline, path: "/settings" },
+      { name: "Help & Support", nameKey: "menu.help", icon: IoHelpBuoyOutline, path: "/help" },
     ],
   },
 ];

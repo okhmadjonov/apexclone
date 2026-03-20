@@ -1,3 +1,4 @@
+import { useTranslation } from "react-i18next";
 import styles from "./Topcards.module.scss";
 import {
   IoWalletOutline,
@@ -9,16 +10,16 @@ import {
 } from "react-icons/io5";
 
 const HomeTopCards = () => {
+  const { t } = useTranslation();
+
   return (
     <div className={styles.hometopcards}>
-      <h3>Dashboard</h3>
-      <p>
-        Welcome back, Aigars. Here's what's happening with your business today.
-      </p>
+      <h3>{t("dashboard")}</h3>
+      <p>{t("welcomeBack")}</p>
       <div className={styles.statisticCards}>
         <div className={styles.card}>
           <div className={styles.cardHeader}>
-            <span className={styles.cardTitle}>Total Revenue</span>
+            <span className={styles.cardTitle}>{t("totalRevenue")}</span>
             <span className={styles.cardIcon}>
               <IoWalletOutline />
             </span>
@@ -29,13 +30,13 @@ const HomeTopCards = () => {
               <IoArrowUpOutline />
               +12.5%
             </span>
-            <span className={styles.trendLabel}>vs last month</span>
+            <span className={styles.trendLabel}>{t("vsLastMonth")}</span>
           </div>
         </div>
 
         <div className={styles.card}>
           <div className={styles.cardHeader}>
-            <span className={styles.cardTitle}>Active Users</span>
+            <span className={styles.cardTitle}>{t("activeUsers")}</span>
             <span className={styles.cardIcon}>
               <IoPeopleOutline />
             </span>
@@ -46,13 +47,13 @@ const HomeTopCards = () => {
               <IoArrowUpOutline />
               +8.2%
             </span>
-            <span className={styles.trendLabel}>vs last month</span>
+            <span className={styles.trendLabel}>{t("vsLastMonth")}</span>
           </div>
         </div>
 
         <div className={styles.card}>
           <div className={styles.cardHeader}>
-            <span className={styles.cardTitle}>Total Orders</span>
+            <span className={styles.cardTitle}>{t("totalOrders")}</span>
             <span className={styles.cardIcon}>
               <IoCartOutline />
             </span>
@@ -63,13 +64,13 @@ const HomeTopCards = () => {
               <IoArrowDownOutline />
               -3.1%
             </span>
-            <span className={styles.trendLabel}>vs last month</span>
+            <span className={styles.trendLabel}>{t("vsLastMonth")}</span>
           </div>
         </div>
 
         <div className={styles.card}>
           <div className={styles.cardHeader}>
-            <span className={styles.cardTitle}>Page Views</span>
+            <span className={styles.cardTitle}>{t("pageViews")}</span>
             <span className={styles.cardIcon}>
               <IoEyeOutline />
             </span>
@@ -80,7 +81,7 @@ const HomeTopCards = () => {
               <IoArrowUpOutline />
               +24.7%
             </span>
-            <span className={styles.trendLabel}>vs last month</span>
+            <span className={styles.trendLabel}>{t("vsLastMonth")}</span>
           </div>
         </div>
       </div>

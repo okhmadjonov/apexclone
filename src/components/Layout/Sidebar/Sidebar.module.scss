@@ -8,8 +8,10 @@
   border-right: 0.5px solid var(--border-color);
   transition:
     width 0.3s ease,
-    background 0.3s ease;
+    background 0.3s ease,
+    transform 0.3s ease;
   position: relative;
+  z-index: 100;
 
   &.collapsed {
     width: 80px;
@@ -31,6 +33,20 @@
     .leftIcon {
       margin-right: 0;
       font-size: 20px;
+    }
+  }
+
+  &.mobile {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    transform: translateX(-100%);
+    z-index: 99;
+    box-shadow: 2px 0 8px rgba(0, 0, 0, 0.15);
+
+    &.mobileOpen {
+      transform: translateX(0);
     }
   }
 
@@ -60,6 +76,33 @@
     svg {
       font-size: clamp(0.75rem, 1vw, 0.9rem);
       background: none;
+    }
+  }
+
+  .closeBtn {
+    position: absolute;
+    right: 16px;
+    top: 20px;
+    width: 32px;
+    height: 32px;
+    background: var(--bg-tertiary);
+    border: none;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: var(--text-primary);
+    z-index: 10;
+    transition: all 0.2s ease;
+
+    &:hover {
+      background: var(--accent-primary);
+      color: #ffffff;
+    }
+
+    svg {
+      font-size: 20px;
     }
   }
 
@@ -209,6 +252,14 @@
         font-size: 12px;
         transition: color 0.2s ease;
       }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .sidebar {
+    &.collapsed {
+      width: 260px;
     }
   }
 }

@@ -1,5 +1,5 @@
 .hometopcards {
-  padding: 0 15px;
+  padding: 24px 24px;
   background: transparent;
 
   h3 {
@@ -110,6 +110,99 @@
           color: var(--text-muted);
           transition: color 0.3s ease;
         }
+      }
+    }
+  }
+}
+
+@media (max-width: 1200px) {
+  .hometopcards {
+    .statisticCards {
+      gap: 16px;
+    }
+  }
+}
+
+@media (max-width: 992px) {
+  .hometopcards {
+    .statisticCards {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .hometopcards {
+    padding: 16px 16px;
+
+    h3 {
+      font-size: 22px;
+    }
+
+    p {
+      font-size: 14px;
+      margin-bottom: 20px;
+    }
+
+    .statisticCards {
+      grid-template-columns: 1fr;
+      gap: 12px;
+
+      .card {
+        padding: 16px;
+
+        .cardHeader {
+          margin-bottom: 12px;
+
+          .cardTitle {
+            font-size: 14px;
+          }
+
+          .cardIcon {
+            padding: 6px;
+
+            svg {
+              font-size: 18px;
+            }
+          }
+        }
+
+        .cardValue {
+          font-size: 24px;
+          margin-bottom: 8px;
+        }
+
+        .cardFooter {
+          .trend {
+            font-size: 12px;
+          }
+
+          .trendLabel {
+            font-size: 12px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .hometopcards {
+    padding: 12px 12px;
+
+    h3 {
+      font-size: 20px;
+    }
+
+    p {
+      font-size: 13px;
+      margin-bottom: 16px;
+    }
+
+    .statisticCards {
+      .card {
+        padding: 14px;
       }
     }
   }

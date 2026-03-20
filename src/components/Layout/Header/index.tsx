@@ -10,12 +10,19 @@ import {
   IoMoonOutline,
   IoNotificationsOutline,
   IoChevronDown,
+  IoMenuOutline,
 } from "react-icons/io5";
 import { useTheme } from "../../../context/ThemeContext";
 import { useTranslation } from "react-i18next";
 import { uzFlag, ruFlag } from "../../../assets/icons";
 
-const Header = () => {
+interface HeaderProps {
+  onMenuClick?: () => void;
+  isMobile?: boolean;
+  isMobileMenuOpen?: boolean;
+}
+
+const Header = ({ onMenuClick, isMobile = false, isMobileMenuOpen = false }: HeaderProps) => {
   const [showDropdown, setShowDropdown] = useState(false);
   const [showLanguageDropdown, setShowLanguageDropdown] = useState(false);
   const [searchValue, setSearchValue] = useState("");
@@ -47,25 +54,38 @@ const Header = () => {
   return (
     <div className={styles.header}>
       <div className={styles.leftSection}>
-        <div className={styles.searchWrapper}>
-          <span className={styles.searchIcon}>
-            <IoSearchOutline />
-          </span>
-          <input
-            type="text"
-            className={styles.searchInput}
-            placeholder={t("searchPlaceholder")}
-            value={searchValue}
-            onChange={(e) => setSearchValue(e.target.value)}
-          />
-        </div>
+        {isMobile && (
+          <button 
+            className={`${styles.menuBtn} ${isMobileMenuOpen ? styles.active : ""}`} 
+            onClick={onMenuClick}
+          >
+            <IoMenuOutline />
+          </button>
+        )}
+        
+        {!isMobile && (
+          <div className={styles.searchWrapper}>
+            <span className={styles.searchIcon}>
+              <IoSearchOutline />
+            </span>
+            <input
+              type="text"
+              className={styles.searchInput}
+              placeholder={t("searchPlaceholder")}
+              value={searchValue}
+              onChange={(e) => setSearchValue(e.target.value)}
+            />
+          </div>
+        )}
       </div>
 
       <div className={styles.rightSection}>
-        <button className={styles.newOrderBtn}>
-          <IoAddOutline />
-          {t("newOrder")}
-        </button>
+        {!isMobile && (
+          <button className={styles.newOrderBtn}>
+            <IoAddOutline />
+            {t("newOrder")}
+          </button>
+        )}
 
         <div className={styles.languageSelector}>
           <div
@@ -79,7 +99,7 @@ const Header = () => {
                 <img src={ruFlag} alt="RU" />
               )}
             </span>
-            <span className={styles.languageText}>{currentLanguage}</span>
+            {!isMobile && <span className={styles.languageText}>{currentLanguage}</span>}
             <IoChevronDown
               className={`${styles.arrow} ${showLanguageDropdown ? styles.rotated : ""}`}
             />
