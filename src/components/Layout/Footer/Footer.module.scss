@@ -1,10 +1,15 @@
 .footer {
   height: 50px;
-  background: #020806;
-  color: #6b757b;
+  background: var(--header-bg);
+  color: var(--text-muted);
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 14px;
-  border-top: 0.5px solid #1d1d1d;
+  border-top: 0.5px solid var(--border-color);
+  transition: all 0.3s ease;
+
+  p {
+    background: transparent;
+  }
 }

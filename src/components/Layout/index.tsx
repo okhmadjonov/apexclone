@@ -1,4 +1,4 @@
-import { FC, ReactNode } from "react";
+import { FC, ReactNode, useState } from "react";
 import styles from "./Layout.module.scss";
 import Sidebar from "./Sidebar/";
 import Header from "./Header/";
@@ -10,9 +10,15 @@ interface Props {
 }
 
 const Layout: FC<Props> = ({ children }) => {
+  const [isSidebarCollapsed, setIsSidebarCollapsed] = useState(false);
+
+  const toggleSidebar = () => {
+    setIsSidebarCollapsed(!isSidebarCollapsed);
+  };
+
   return (
     <div className={styles.layout}>
-      <Sidebar />
+      <Sidebar isCollapsed={isSidebarCollapsed} onToggle={toggleSidebar} />
       <div className={styles.main}>
         <Header />
         <div className={styles.content}>

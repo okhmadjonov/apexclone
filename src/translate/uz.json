@@ -1,8 +1,6 @@
 {
-  "auth": {
-    "login": "kirish"
-  },
-  "lang": {
-    "lang": "U"
-  }
+  "searchPlaceholder": "Qidirish...",
+  "newOrder": "Yangi buyurtma",
+  "profile": "Profil",
+  "logout": "Chiqish"
 }

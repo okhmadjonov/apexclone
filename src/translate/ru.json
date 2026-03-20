@@ -1,8 +1,6 @@
 {
-  "auth": {
-    "login": "Вход"
-  },
-  "lang": {
-    "lang": "RU"
-  }
+  "searchPlaceholder": "Поиск...",
+  "newOrder": "Новый заказ",
+  "profile": "Профиль",
+  "logout": "Выход"
 }

@@ -1,9 +1,11 @@
 import styles from "./Footer.module.scss";
 
 const Footer = () => {
+  const currentYear = new Date().getFullYear();
+
   return (
     <div className={styles.footer}>
-      CI ©{new Date().getFullYear()} created by sololearn.uz team
+      <p>© {currentYear} Apex Clone Dashboard. All rights reserved.</p>
     </div>
   );
 };

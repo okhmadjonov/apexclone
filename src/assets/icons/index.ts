@@ -1,2 +1,4 @@
-// export { default as UzFlag } from "./uz-flag.svg";
-// export { default as RuFlag } from "./ru-flag.svg";
+import uzFlag from "./uz-flag.svg";
+import ruFlag from "./ru-flag.svg";
+
+export { uzFlag, ruFlag };
