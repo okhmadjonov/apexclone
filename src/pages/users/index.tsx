@@ -8,6 +8,7 @@ import { Input, Button, Tabs, Table, Select, Pagination, Avatar } from "antd";
 import type { ColumnsType } from "antd/es/table";
 import { useTranslation } from "react-i18next";
 import styles from "./Users.module.scss";
+import { IoSearchOutline } from "react-icons/io5";
 
 const { TabPane } = Tabs;
 const { Option } = Select;
@@ -129,7 +130,7 @@ const mockUsers: User[] = [
 const Users: React.FC = () => {
   const { t } = useTranslation();
   const [activeTab, setActiveTab] = useState<string>("all");
-  const [searchText, setSearchText] = useState<string>("");
+  const [searchValue, setSearchValue] = useState("");
   const [currentPage, setCurrentPage] = useState<number>(1);
   const [pageSize, setPageSize] = useState<number>(10);
 
@@ -142,16 +143,16 @@ const Users: React.FC = () => {
       filtered = filtered.filter((user) => user.status === "inactive");
     }
 
-    if (searchText) {
+    if (searchValue) {
       filtered = filtered.filter(
         (user) =>
-          user.name.toLowerCase().includes(searchText.toLowerCase()) ||
-          user.email.toLowerCase().includes(searchText.toLowerCase()),
+          user.name.toLowerCase().includes(searchValue.toLowerCase()) ||
+          user.email.toLowerCase().includes(searchValue.toLowerCase()),
       );
     }
 
     return filtered;
-  }, [activeTab, searchText]);
+  }, [activeTab, searchValue]);
 
   const paginatedUsers = useMemo(() => {
     const start = (currentPage - 1) * pageSize;
@@ -271,14 +272,19 @@ const Users: React.FC = () => {
 
       <div className={styles.tableControls}>
         <div className={styles.leftControls}>
-          <Input
-            placeholder="Search customers..."
-            prefix={<SearchOutlined />}
-            value={searchText}
-            onChange={(e) => setSearchText(e.target.value)}
-            className={styles.searchInput}
-            allowClear
-          />
+        
+          <div className={styles.searchWrapper}>
+            <span className={styles.searchIcon}>
+              <IoSearchOutline />
+            </span>
+            <input
+              type="text"
+              className={styles.searchInput}
+              placeholder={t("searchPlaceholder")}
+              value={searchValue}
+              onChange={(e) => setSearchValue(e.target.value)}
+            />
+          </div>
         </div>
         <div className={styles.rightControls}>
           <Button icon={<FilterOutlined />} className={styles.filterButton}>
