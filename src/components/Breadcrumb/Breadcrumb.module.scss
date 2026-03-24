@@ -1,6 +1,24 @@
 .breadcrumb {
   margin-bottom: 15px;
-  color: #6b757b;
   font-size: 14px;
   height: 30px;
+  display: flex;
+  align-items: center;
+  padding-left: 25px;
+  cursor: pointer;
+  // border-bottom:  0.5px solid var(--border-color);
+
+  :global(.ant-breadcrumb-link),
+  :global(.ant-breadcrumb-separator) {
+    color: var(--text-secondary);
+  }
+
+  :global(.ant-breadcrumb-link a) {
+    color: var(--text-secondary);
+    cursor: pointer;
+
+    &:hover {
+      color: var(--accent-primary-hover);
+    }
+  }
 }
